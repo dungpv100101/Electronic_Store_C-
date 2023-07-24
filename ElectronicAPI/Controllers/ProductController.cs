@@ -14,7 +14,7 @@ namespace ElectronicAPI.Controllers
         }
 
         [HttpGet]
-        public IActionResult List(int pageNumber = 1, int pageSize = 3, string productName = "", int categoryID = 0)
+        public IActionResult List(int pageNumber = 1, int pageSize = 3, string? productName = "", int categoryID = 0)
         {
             return Ok(productService.List(pageNumber, pageSize, productName, categoryID));
         }

@@ -16,7 +16,7 @@ namespace ElectronicAPI.Services.Impl
         }
         public BaseResponse List(int pageNumber = 1, int pageSize = 3, string productName = "", int categoryID = 0)
         {
-            List<Product> listProduct = _context.Products.Where(p => p.Name.Contains(productName) && p.ProductTypeId == (categoryID == 0 ? p.ProductTypeId : categoryID)).ToList();
+            List<Product> listProduct = _context.Products.Where(p => p.Name.Contains(productName == null ? "" : productName) && p.ProductTypeId == (categoryID == 0 ? p.ProductTypeId : categoryID)).ToList();
 
             return BaseResponse.Success(listProduct);
         }

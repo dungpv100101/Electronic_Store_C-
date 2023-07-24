@@ -16,6 +16,8 @@ builder.Services.AddSwaggerGen();
 builder.Services.AddAutoMapper(AppDomain.CurrentDomain.GetAssemblies());
 
 builder.Services.AddScoped<IProductService, ProductServiceImpl>();
+builder.Services.AddScoped<IProductTypeService, ProductTypeServiceImpl>();
+
 builder.Services.AddDbContext<Electronic_Shop_SystemContext>();
 
 var app = builder.Build();

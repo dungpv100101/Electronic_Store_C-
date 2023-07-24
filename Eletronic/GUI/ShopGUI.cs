@@ -1,4 +1,5 @@
-﻿using Eletronic.Models;
+﻿using Eletronic.Client;
+using Eletronic.Models;
 using System;
 using System.Collections.Generic;
 using System.Data;
@@ -24,7 +25,9 @@ namespace Eletronic.GUI
             InitializeComponent();
             bindListProduct();
 
-            List<ProductType> productTypes = context.ProductTypes.ToList();
+            //List<ProductType> productTypes = context.ProductTypes.ToList();
+            List<ProductType> productTypes = new ProductTypeClient().GetListProductType();
+
             comboCategory.Items.Insert(0, "All");
             foreach (ProductType productType in productTypes)
             {
@@ -33,11 +36,11 @@ namespace Eletronic.GUI
             comboCategory.SelectedIndex = 0;
         }
 
-        public void bindListProduct(int pageNumber = 1, int pageSize = 3, string productName = "", int categoryID = 0)
+        public async void bindListProduct(int pageNumber = 1, int pageSize = 3, string productName = "", int categoryID = 0)
         {
             panelListProduct.Controls.Clear();
 
-            List<Product> listProduct = context.Products.Where(p => p.Name.Contains(productName) && p.ProductTypeId == (categoryID == 0 ? p.ProductTypeId : categoryID)).ToList();
+            List<Product> listProduct = new ProductClient().GetListProduct(pageNumber, pageSize, productName, categoryID).Result;
 
             var totalRecords = listProduct.Count;
             totalPages = Math.Ceiling((double)totalRecords / pageSize);
