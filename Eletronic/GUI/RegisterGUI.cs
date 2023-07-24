@@ -10,12 +10,14 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using Eletronic.Models;
 using System.Text.RegularExpressions;
+using Eletronic.Client;
 
 namespace Eletronic.GUI
 {
     public partial class RegisterGUI : Form
     {
         Electronic_Shop_SystemContext context = new Electronic_Shop_SystemContext();
+        private UserClient userClient = new UserClient();   
         public RegisterGUI()
         {
             InitializeComponent();
@@ -44,9 +46,10 @@ namespace Eletronic.GUI
                     IsStaff = 0
                 };
 
-                context.Users.Add(user);
+                
+                //context.Users.Add(user);
 
-                if (context.SaveChanges() > 0)
+                if (userClient.Add(user))
                 {
                     MessageBox.Show("Register successfully. Please log in", "Register", MessageBoxButtons.OK);
                     this.Close();

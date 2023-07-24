@@ -1,4 +1,4 @@
-﻿using BusinessObject.DTO.Response;
+﻿using Eletronic.DTO.Response;
 using Eletronic.Models;
 using System;
 using System.Collections.Generic;

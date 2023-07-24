@@ -1,6 +1,7 @@
 ﻿using AutoMapper;
 using BusinessObject.DTO;
 using BusinessObject.DTO.Request;
+using Eletronic.Models;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -13,6 +14,7 @@ namespace BusinessObject.Config
     {
         public AutoMapperProfile() 
         {
+            CreateMap<Product, ProductDTO>().IgnoreAllSourcePropertiesWithAnInaccessibleSetter();
         }
     }
 }

@@ -1,4 +1,5 @@
 ﻿using AutoMapper;
+using BusinessObject.DTO;
 using BusinessObject.DTO.Response;
 using Eletronic.Models;
 using Microsoft.EntityFrameworkCore;
@@ -15,14 +16,24 @@ namespace ElectronicAPI.Services.Impl
             this.context = _context;
             this._mapper = _mapper;
         }
-        public BaseResponse GetReportInfo(DateTime startDate, DateTime toDate)
+        public BaseResponse GetReportInfo(DateTime? startDate, DateTime? toDate)
         {
-            int totalProductSell = calToTalProductSell(startDate, toDate);
-            int totalOrder = calTotalOrder(startDate, toDate);
-            double totalMoney = calTotalMoney(startDate, toDate);
+            Product pro = getNewestProduct();
+
+            ProductDTO productDTO = _mapper.Map<ProductDTO>(pro);
+
+            ReportDTO reportDTO = new ReportDTO()
+            {
+                TotalProductSell = calToTalProductSell(startDate, toDate),
+                TotalOrder = calTotalOrder(startDate, toDate),
+                TotalMoney = calTotalMoney(startDate, toDate),
+                NewestProduct = productDTO
+            };
+
+            return BaseResponse.Success(reportDTO);
         }
 
-        private int calToTalProductSell(DateTime fromDate, DateTime toDate)
+        private int calToTalProductSell(DateTime? fromDate, DateTime? toDate)
         {
             int total = 0;
 
@@ -38,7 +49,7 @@ namespace ElectronicAPI.Services.Impl
             return total;
         }
 
-        private double calTotalMoney(DateTime fromDate, DateTime toDate)
+        private double calTotalMoney(DateTime? fromDate, DateTime? toDate)
         {
             double total = 0;
 
@@ -55,7 +66,7 @@ namespace ElectronicAPI.Services.Impl
             return total;
         }
 
-        private int calTotalOrder(DateTime fromDate, DateTime toDate)
+        private int calTotalOrder(DateTime? fromDate, DateTime? toDate)
         {
             int total = 0;
 
@@ -66,6 +77,12 @@ namespace ElectronicAPI.Services.Impl
             total = listOrder.Count;
 
             return total;
+        }
+
+        public Product getNewestProduct()
+        {
+            Product product = context.Products.OrderBy(s => s.ProductId).Last();
+            return product;
         }
     }
 }

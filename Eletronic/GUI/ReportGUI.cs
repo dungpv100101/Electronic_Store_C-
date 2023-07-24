@@ -8,6 +8,8 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using Eletronic.Client;
+using Eletronic.DTO;
 using Eletronic.Models;
 using Microsoft.EntityFrameworkCore;
 
@@ -16,6 +18,7 @@ namespace Eletronic.GUI
     public partial class ReportGUI : Form
     {
         Electronic_Shop_SystemContext context = new Electronic_Shop_SystemContext();
+        private ReportClient reportClient = new ReportClient();
         public ReportGUI()
         {
             InitializeComponent();
@@ -27,7 +30,9 @@ namespace Eletronic.GUI
             DateTime startDate = dateTimePicker1.Value;
             DateTime toDate = dateTimePicker2.Value;
 
-            Product pro = getNewestProduct();
+            ReportDTO reportDTO = reportClient.GetReportData(startDate, toDate);
+
+            ProductDTO pro = reportDTO.NewestProduct;
 
             if (pro.Image != null)
             {
@@ -36,61 +41,9 @@ namespace Eletronic.GUI
 
             textBox1.Text = pro.Name;
 
-            label1.Text = calToTalProductSell(startDate, toDate) + "";
-            label2.Text = calTotalOrder(startDate, toDate) + "";
-            label3.Text = "$" + calTotalMoney(startDate, toDate) ;
-        }
-
-        public int calToTalProductSell(DateTime fromDate, DateTime toDate)
-        {
-            int total = 0;
-
-            List<Order> listOrder = context.Orders
-                .Include(s => s.OrderDetails)
-                .Where(s => s.OrderDate > fromDate && s.OrderDate < toDate).ToList();
-
-            foreach (Order order in listOrder)
-            {
-                total += order.OrderDetails.Count;
-            }
-
-            return total;
-        }
-
-        public double calTotalMoney(DateTime fromDate, DateTime toDate)
-        {
-            double total = 0;
-
-            List<OrderDetail> listOrderDetails = context.OrderDetails
-                .Include(s => s.Order)
-                .Include(s => s.Product)
-                .Where(s => s.Order.OrderDate > fromDate && s.Order.OrderDate < toDate).ToList();
-
-            foreach (OrderDetail orderDetail in listOrderDetails)
-            {
-                total += orderDetail.Product.SellPrice - orderDetail.Product.Price;
-            }
-
-            return total;
-        }
-
-        public int calTotalOrder(DateTime fromDate, DateTime toDate)
-        {
-            int total = 0;
-
-            List<Order> listOrder = context.Orders
-                .Include(s => s.OrderDetails)
-                .Where(s => s.OrderDate > fromDate && s.OrderDate < toDate && s.DeliverDate != null).ToList();
-
-            total = listOrder.Count;
-
-            return total;
-        }
-
-        public Product getNewestProduct()
-        {
-            Product product = context.Products.OrderBy(s => s.ProductId).Last();
-            return product;
+            label1.Text = reportDTO.TotalProductSell + "";
+            label2.Text = reportDTO.TotalOrder + "";
+            label3.Text = "$" + reportDTO.TotalMoney;
         }
 
         private void dateTimePicker1_ValueChanged(object sender, EventArgs e)
