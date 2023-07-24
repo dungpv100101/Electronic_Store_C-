@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Eletronic.DTO.Request
+namespace DataAccess.DTO.Request
 {
     public class BaseRequest
     {

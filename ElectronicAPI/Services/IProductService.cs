@@ -1,5 +1,5 @@
 ﻿using BusinessObject.DTO.Response;
-using Eletronic.Models;
+using DataAccess.Models;
 
 namespace ElectronicAPI.Services
 {

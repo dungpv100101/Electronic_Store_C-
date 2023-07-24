@@ -8,7 +8,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace Eletronic.Properties {
+namespace DataAccess.Properties {
     using System;
     
     

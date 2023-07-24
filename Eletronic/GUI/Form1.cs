@@ -1,11 +1,12 @@
 ﻿using System;
 using System.Linq;
 using System.Windows.Forms;
+using DataAccess.Client;
+using DataAccess.GUI;
+using DataAccess.Models;
 using Eletronic.Client;
-using Eletronic.GUI;
-using Eletronic.Models;
 
-namespace Eletronic
+namespace DataAccess
 {
     public partial class Form1 : Form
     {
@@ -13,6 +14,7 @@ namespace Eletronic
         private const int btnChildHeight = 33;
         private OrderClient orderClient = new OrderClient();
         private OrderDetailClient orderDetailClient = new OrderDetailClient();
+        private AuthClient authClient = new AuthClient();
         public int cartNumer
         {
             get
@@ -164,6 +166,16 @@ namespace Eletronic
             {
                 Setting.user = null;
                 btnLogin.Text = "      Login";
+                authClient.Logout();
+
+
+                MinimizedNav();
+                SetPosNav();
+
+                panelMark.Height = panelShop.Height;
+                panelMark.Top = panelShop.Top;
+
+                btnReport.Hide();
                 btnManager.Hide();
             }
             else
@@ -204,7 +216,6 @@ namespace Eletronic
             if (MessageBox.Show("Do you want to checkout ?", "Check Out", MessageBoxButtons.YesNo) == DialogResult.Yes)
             {
                 User user = Setting.user;
-                Electronic_Shop_SystemContext context = new Electronic_Shop_SystemContext();
 
                 double totalPrice = Electronic.Cart.getTotalPrice();
 
@@ -219,8 +230,6 @@ namespace Eletronic
                 };
 
                 orderClient.Add(order);
-                //context.Orders.Add(order);
-                //context.SaveChanges();
 
                 foreach (Product pro in Electronic.Cart.listProductInCart.Keys)
                 {
@@ -229,14 +238,13 @@ namespace Eletronic
                         ProductId = pro.ProductId,
                         Quantity = Electronic.Cart.listProductInCart[pro],
                         BuyPrice = pro.SellPrice * Electronic.Cart.listProductInCart[pro],
-                        OrderId = context.Orders.ToList().ElementAt(context.Orders.Count()-1).OrderId
+                        //OrderId = context.Orders.ToList().ElementAt(context.Orders.Count() - 1).OrderId
+                        OrderId = orderClient.GetListOrder(null, null).Last().OrderId
                     };
 
                     orderDetailClient.Add(orderDetails);
-                    //context.OrderDetails.Add(orderDetails);
                 }
 
-                //context.SaveChanges();
                 Electronic.Cart.listProductInCart.Clear();
                 btnCart_Click(null, null);
             }
@@ -259,7 +267,7 @@ namespace Eletronic
 
         private void btnManager_Click(object sender, EventArgs e)
         {
-            Form f = new UserMangeGUI() { TopLevel = false};
+            Form f = new UserMangeGUI() { TopLevel = false };
             f.Show();
 
             panelMain.Controls.Clear();
@@ -268,11 +276,16 @@ namespace Eletronic
 
         private void btnReport_Click(object sender, EventArgs e)
         {
-            Form f = new ReportGUI() { TopLevel = false};
+            Form f = new ReportGUI() { TopLevel = false };
             f.Show();
 
             panelMain.Controls.Clear();
             panelMain.Controls.Add(f);
+        }
+
+        private void label3_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

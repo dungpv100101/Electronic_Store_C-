@@ -3,14 +3,13 @@ using System.Data;
 using System.Drawing;
 using System.Linq;
 using System.Windows.Forms;
-using Eletronic.Client;
-using Eletronic.Models;
+using DataAccess.Client;
+using DataAccess.Models;
 
-namespace Eletronic.GUI
+namespace DataAccess.GUI
 {
     public partial class AddCategoryGUI : Form
     {
-        private Electronic_Shop_SystemContext context = new Electronic_Shop_SystemContext();
         private ProductTypeClient productTypeClient = new ProductTypeClient();
         public AddCategoryGUI()
         {
@@ -24,28 +23,30 @@ namespace Eletronic.GUI
                 label1.Text = "*Category must not empty.";
                 label1.ForeColor = Color.Red;
                 btnAddCategory.Enabled = false;
-            } else if (checkCategoryExist(txtCategoryName.Text))
-            {
-                label1.Text = "*Category name existing.";
-                label1.ForeColor = Color.Red;
-                btnAddCategory.Enabled = false;
-            } else
+            }  else
             {
                 label1.Text = "*You can use this category name.";
                 label1.ForeColor = Color.Green;
                 btnAddCategory.Enabled = true;
             }
+
+            //else if (checkCategoryExist(txtCategoryName.Text))
+            //{
+            //    label1.Text = "*Category name existing.";
+            //    label1.ForeColor = Color.Red;
+            //    btnAddCategory.Enabled = false;
+            //}
         }
 
-        private bool checkCategoryExist(string categoryName)
-        {
-            if (context.ProductTypes.Where(s => s.ProductTypeName == categoryName).Count() > 0)
-            {
-                return true;
-            }
+        //private bool checkCategoryExist(string categoryName)
+        //{
+        //    if (context.ProductTypes.Where(s => s.ProductTypeName == categoryName).Count() > 0)
+        //    {
+        //        return true;
+        //    }
 
-            return false;
-        }
+        //    return false;
+        //}
 
         private void btnQuit_Click(object sender, EventArgs e)
         {

@@ -1,5 +1,5 @@
-﻿using Eletronic.DTO.Response;
-using Eletronic.Models;
+﻿using DataAccess.DTO.Response;
+using DataAccess.Models;
 using Newtonsoft.Json.Linq;
 using System;
 using System.Collections.Generic;
@@ -14,7 +14,7 @@ using System.Windows.Forms;
 using static Microsoft.EntityFrameworkCore.DbLoggerCategory;
 using static System.Net.WebRequestMethods;
 
-namespace Eletronic.Client
+namespace DataAccess.Client
 {
     public class ProductClient : BaseClient
     {

@@ -8,15 +8,14 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using Eletronic.Client;
-using Eletronic.Models;
+using DataAccess.Client;
+using DataAccess.Models;
 using Microsoft.EntityFrameworkCore;
 
-namespace Eletronic.GUI
+namespace DataAccess.GUI
 {
     public partial class OrderGUI : Form
     {
-        private Electronic_Shop_SystemContext context = new Electronic_Shop_SystemContext();
         private OrderClient orderClient = new OrderClient();
         private OrderDetailClient orderDetailClient = new OrderDetailClient();
         private bool isManage;

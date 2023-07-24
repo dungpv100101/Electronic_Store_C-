@@ -1,6 +1,6 @@
 ﻿using AutoMapper;
 using BusinessObject.DTO.Response;
-using Eletronic.Models;
+using DataAccess.Models;
 using Microsoft.EntityFrameworkCore;
 
 namespace ElectronicAPI.Services.Impl

@@ -3,9 +3,9 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using Eletronic.Models;
+using DataAccess.Models;
 
-namespace Eletronic
+namespace DataAccess
 {
     class Setting
     {

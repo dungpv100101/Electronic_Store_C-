@@ -1,5 +1,5 @@
 ﻿using ElectronicAPI.Services;
-using Eletronic.Models;
+using DataAccess.Models;
 using Microsoft.AspNetCore.Mvc;
 
 namespace ElectronicAPI.Controllers

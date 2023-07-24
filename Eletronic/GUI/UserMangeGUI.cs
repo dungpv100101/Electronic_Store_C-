@@ -7,14 +7,13 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using Eletronic.Client;
-using Eletronic.Models;
+using DataAccess.Client;
+using DataAccess.Models;
 
-namespace Eletronic.GUI
+namespace DataAccess.GUI
 {
     public partial class UserMangeGUI : Form
     {
-        private Electronic_Shop_SystemContext context = new Electronic_Shop_SystemContext();
         private UserClient userClient = new UserClient();
         public UserMangeGUI()
         {

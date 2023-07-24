@@ -7,13 +7,15 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using Eletronic.Models;
+using DataAccess.Models;
+using Eletronic.Client;
+using Eletronic.DTO;
 
-namespace Eletronic.GUI
+namespace DataAccess.GUI
 {
     public partial class LoginGUI : Form
     {
-        Electronic_Shop_SystemContext context = new Electronic_Shop_SystemContext();
+        private AuthClient authClient = new AuthClient();
         public LoginGUI()
         {
             InitializeComponent();
@@ -27,7 +29,7 @@ namespace Eletronic.GUI
 
             try
             {
-                user = context.Users.Where(s => s.Account == userName && s.Password == password).ToList()[0];
+                user = authClient.Login(new LoginDTO() { username = userName, password = password });
             } catch { }
 
             if (user == null)

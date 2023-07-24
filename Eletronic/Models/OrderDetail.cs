@@ -3,7 +3,7 @@ using System.Collections.Generic;
 
 #nullable disable
 
-namespace Eletronic.Models
+namespace DataAccess.Models
 {
     public partial class OrderDetail
     {

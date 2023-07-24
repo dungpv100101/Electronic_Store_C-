@@ -8,16 +8,15 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using Eletronic.Client;
-using Eletronic.DTO;
-using Eletronic.Models;
+using DataAccess.Client;
+using DataAccess.DTO;
+using DataAccess.Models;
 using Microsoft.EntityFrameworkCore;
 
-namespace Eletronic.GUI
+namespace DataAccess.GUI
 {
     public partial class ReportGUI : Form
     {
-        Electronic_Shop_SystemContext context = new Electronic_Shop_SystemContext();
         private ReportClient reportClient = new ReportClient();
         public ReportGUI()
         {

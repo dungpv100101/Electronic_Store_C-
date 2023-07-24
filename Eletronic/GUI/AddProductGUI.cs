@@ -3,14 +3,13 @@ using System.Drawing;
 using System.IO;
 using System.Linq;
 using System.Windows.Forms;
-using Eletronic.Client;
-using Eletronic.Models;
+using DataAccess.Client;
+using DataAccess.Models;
 
-namespace Eletronic.GUI
+namespace DataAccess.GUI
 {
     public partial class AddProductGUI : Form
     {
-        private Electronic_Shop_SystemContext context = new Electronic_Shop_SystemContext();
         private ProductClient productClient = new ProductClient();
         private ProductTypeClient productTypeClient = new ProductTypeClient();
         public AddProductGUI()

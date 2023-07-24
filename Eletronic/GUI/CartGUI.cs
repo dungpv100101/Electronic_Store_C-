@@ -1,4 +1,4 @@
-﻿using Eletronic.Models;
+﻿using DataAccess.Models;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -9,7 +9,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace Eletronic.GUI
+namespace DataAccess.GUI
 {
     public partial class CartGUI : Form
     {

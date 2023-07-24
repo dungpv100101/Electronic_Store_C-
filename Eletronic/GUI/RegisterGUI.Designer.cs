@@ -1,5 +1,5 @@
 ﻿
-namespace Eletronic.GUI
+namespace DataAccess.GUI
 {
     partial class RegisterGUI
     {

@@ -6,7 +6,7 @@ using System.Text;
 using System.Text.Json;
 using System.Threading.Tasks;
 
-namespace Eletronic.DTO.Response
+namespace DataAccess.DTO.Response
 {
     public class  BaseResponse
     {

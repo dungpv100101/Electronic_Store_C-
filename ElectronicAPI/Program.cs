@@ -1,7 +1,8 @@
 using AutoMapper;
 using ElectronicAPI.Services;
 using ElectronicAPI.Services.Impl;
-using Eletronic.Models;
+using DataAccess.Models;
+using Microsoft.AspNetCore.Authentication.Cookies;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -21,8 +22,17 @@ builder.Services.AddScoped<IOrderService, OrderServiceImpl>();
 builder.Services.AddScoped<IOrderDetailService, OrderDetailServiceImpl>();
 builder.Services.AddScoped<IUserService, UserServiceImpl>();
 builder.Services.AddScoped<IReportService, ReportServiceImpl>();
+builder.Services.AddScoped<IAuthService, AuthSerivceImpl>();
 
 builder.Services.AddDbContext<Electronic_Shop_SystemContext>();
+
+builder.Services.AddAuthentication(CookieAuthenticationDefaults.AuthenticationScheme)
+    .AddCookie(options =>
+    {
+        options.ExpireTimeSpan = TimeSpan.FromMinutes(20);
+        options.SlidingExpiration = true;
+    });
+builder.Services.AddHttpContextAccessor();
 
 var app = builder.Build();
 

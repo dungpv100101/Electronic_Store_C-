@@ -1,5 +1,5 @@
-﻿using Eletronic.DTO.Response;
-using Eletronic.Models;
+﻿using DataAccess.DTO.Response;
+using DataAccess.Models;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -7,7 +7,7 @@ using System.Net;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Eletronic.Client
+namespace DataAccess.Client
 {
     public class ProductTypeClient : BaseClient
     {

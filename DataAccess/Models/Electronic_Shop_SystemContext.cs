@@ -4,7 +4,7 @@ using Microsoft.EntityFrameworkCore.Metadata;
 
 #nullable disable
 
-namespace Eletronic.Models
+namespace DataAccess.Models
 {
     public partial class Electronic_Shop_SystemContext : DbContext
     {

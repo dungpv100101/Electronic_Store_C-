@@ -1,5 +1,5 @@
-﻿using Eletronic.Client;
-using Eletronic.Models;
+﻿using DataAccess.Client;
+using DataAccess.Models;
 using System;
 using System.Collections.Generic;
 using System.Data;
@@ -8,7 +8,7 @@ using System.IO;
 using System.Linq;
 using System.Windows.Forms;
 
-namespace Eletronic.GUI
+namespace DataAccess.GUI
 {
     public partial class ShopGUI : Form
     {
@@ -18,8 +18,8 @@ namespace Eletronic.GUI
         private int pageSize = 3;
         private double totalPages = 0;
         private string productName = "";
+        List<Product> listProduct;
 
-        Electronic_Shop_SystemContext context = new Electronic_Shop_SystemContext();
         public ShopGUI()
         {
             InitializeComponent();
@@ -40,7 +40,7 @@ namespace Eletronic.GUI
         {
             panelListProduct.Controls.Clear();
 
-            List<Product> listProduct = new ProductClient().GetListProduct(pageNumber, pageSize, productName, categoryID).Result;
+            listProduct = new ProductClient().GetListProduct(pageNumber, pageSize, productName, categoryID).Result;
 
             var totalRecords = listProduct.Count;
             totalPages = Math.Ceiling((double)totalRecords / pageSize);
@@ -309,7 +309,9 @@ namespace Eletronic.GUI
 
         private void button1_Click(object sender, EventArgs e)
         {
-            Product product = context.Products.Find(Int32.Parse(((Button)sender).Name));
+            //Product product = context.Products.Find(Int32.Parse(((Button)sender).Name));
+            Product product = listProduct.FindLast(p => p.ProductId == Int32.Parse(((Button)sender).Name));
+
             Electronic.Cart.addToCart(product);
 
             ((Form1)(this.Parent.Parent)).cartNumer = Electronic.Cart.listProductInCart.Count;

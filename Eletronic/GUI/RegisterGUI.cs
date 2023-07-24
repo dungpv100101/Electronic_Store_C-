@@ -1,4 +1,4 @@
-﻿using Eletronic.Models;
+﻿using DataAccess.Models;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -8,15 +8,14 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using Eletronic.Models;
+using DataAccess.Models;
 using System.Text.RegularExpressions;
-using Eletronic.Client;
+using DataAccess.Client;
 
-namespace Eletronic.GUI
+namespace DataAccess.GUI
 {
     public partial class RegisterGUI : Form
     {
-        Electronic_Shop_SystemContext context = new Electronic_Shop_SystemContext();
         private UserClient userClient = new UserClient();   
         public RegisterGUI()
         {
