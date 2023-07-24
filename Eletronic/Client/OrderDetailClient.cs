@@ -22,5 +22,13 @@ namespace Eletronic.Client
 
             return orderDetails;
         }
+
+        public bool Add(OrderDetail order)
+        {
+            string apiUrl = ORDER_DETAIL_URL + "Add";
+
+            BaseResponse baseResponse = Post(apiUrl, order);
+            return baseResponse != null;
+        }
     }
 }

@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Linq;
 using System.Windows.Forms;
+using Eletronic.Client;
 using Eletronic.GUI;
 using Eletronic.Models;
 
@@ -10,6 +11,8 @@ namespace Eletronic
     {
         private const int btnHeight = 54;
         private const int btnChildHeight = 33;
+        private OrderClient orderClient = new OrderClient();
+        private OrderDetailClient orderDetailClient = new OrderDetailClient();
         public int cartNumer
         {
             get
@@ -215,8 +218,9 @@ namespace Eletronic
                     StaffId = user.StaffId
                 };
 
-                context.Orders.Add(order);
-                context.SaveChanges();
+                orderClient.Add(order);
+                //context.Orders.Add(order);
+                //context.SaveChanges();
 
                 foreach (Product pro in Electronic.Cart.listProductInCart.Keys)
                 {
@@ -228,10 +232,11 @@ namespace Eletronic
                         OrderId = context.Orders.ToList().ElementAt(context.Orders.Count()-1).OrderId
                     };
 
-                    context.OrderDetails.Add(orderDetails);
+                    orderDetailClient.Add(orderDetails);
+                    //context.OrderDetails.Add(orderDetails);
                 }
 
-                context.SaveChanges();
+                //context.SaveChanges();
                 Electronic.Cart.listProductInCart.Clear();
                 btnCart_Click(null, null);
             }

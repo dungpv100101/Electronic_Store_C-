@@ -32,5 +32,13 @@ namespace Eletronic.Client
 
             return baseResponse != null;
         }
+
+        public bool Add(Order order)
+        {
+            string apiUrl = ORDER_URL + "Add";
+            
+            BaseResponse baseResponse = Post(apiUrl, order);
+            return baseResponse != null;
+        }
     }
 }

@@ -14,6 +14,16 @@ namespace ElectronicAPI.Services.Impl
             this._context = _context;
             this._mapper = _mapper;
         }
+
+        public BaseResponse Add(ProductType productType)
+        {
+            _context.ProductTypes.Add(productType);
+
+            if (_context.SaveChanges() > 0) return BaseResponse.Success();
+
+            return BaseResponse.Error();
+        }
+
         public BaseResponse List()
         {
             return BaseResponse.Success(_context.ProductTypes.ToList());

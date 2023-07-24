@@ -1,4 +1,5 @@
 ﻿using ElectronicAPI.Services;
+using Eletronic.Models;
 using Microsoft.AspNetCore.Mvc;
 
 namespace ElectronicAPI.Controllers
@@ -17,6 +18,12 @@ namespace ElectronicAPI.Controllers
         public IActionResult List()
         {
             return Ok(productTypeService.List());
+        }
+
+        [HttpPost]
+        public IActionResult Add(ProductType productType)
+        {
+            return Ok(productTypeService.Add(productType));
         }
     }
 }

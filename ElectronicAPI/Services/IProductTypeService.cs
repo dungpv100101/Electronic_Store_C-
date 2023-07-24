@@ -6,5 +6,6 @@ namespace ElectronicAPI.Services
     public interface IProductTypeService
     {
         BaseResponse List();
+        BaseResponse Add(ProductType productType);
     }
 }

@@ -15,6 +15,16 @@ namespace ElectronicAPI.Services.Impl
             this._context = _context;
             this._mapper = _mapper;
         }
+
+        public BaseResponse Add(OrderDetail orderDetail)
+        {
+            _context.OrderDetails.Add(orderDetail);
+
+            if (_context.SaveChanges() > 0) return BaseResponse.Success();
+
+            return BaseResponse.Error();
+        }
+
         public BaseResponse List(int? orderID)
         {
             List<OrderDetail> list = _context.OrderDetails.Include(s => s.Product).Where(s => s.OrderId == orderID).ToList();

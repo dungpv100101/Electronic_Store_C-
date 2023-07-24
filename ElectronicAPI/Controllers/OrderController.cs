@@ -1,4 +1,5 @@
 ﻿using ElectronicAPI.Services;
+using Eletronic.Models;
 using Microsoft.AspNetCore.Mvc;
 
 namespace ElectronicAPI.Controllers
@@ -23,6 +24,13 @@ namespace ElectronicAPI.Controllers
         public IActionResult Delevired(int orderId) 
         {
             return Ok(orderService.Delivered(orderId));
+        }
+
+
+        [HttpPost]
+        public IActionResult Add(Order order)
+        {
+            return Ok(orderService.Add(order));
         }
     }
 }

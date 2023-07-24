@@ -23,5 +23,14 @@ namespace Eletronic.Client
 
             return productTypes;
         }
+
+        public bool Add(ProductType productType)
+        {
+            string apiUrl = PRODUCT_TYPE_URL + "Add";
+
+            BaseResponse baseResponse = Post(apiUrl, productType);
+
+            return baseResponse != null;
+        }
     }
 }

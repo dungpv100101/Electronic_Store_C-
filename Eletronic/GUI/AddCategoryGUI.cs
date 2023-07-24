@@ -3,6 +3,7 @@ using System.Data;
 using System.Drawing;
 using System.Linq;
 using System.Windows.Forms;
+using Eletronic.Client;
 using Eletronic.Models;
 
 namespace Eletronic.GUI
@@ -10,6 +11,7 @@ namespace Eletronic.GUI
     public partial class AddCategoryGUI : Form
     {
         private Electronic_Shop_SystemContext context = new Electronic_Shop_SystemContext();
+        private ProductTypeClient productTypeClient = new ProductTypeClient();
         public AddCategoryGUI()
         {
             InitializeComponent();
@@ -59,8 +61,7 @@ namespace Eletronic.GUI
                     ProductTypeName = txtCategoryName.Text
                 };
 
-                context.ProductTypes.Add(productType);
-                context.SaveChanges();
+                productTypeClient.Add(productType);
                 this.Close();
             }
         }

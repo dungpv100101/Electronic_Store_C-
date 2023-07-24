@@ -28,5 +28,14 @@ namespace ElectronicAPI.Services.Impl
             
             return BaseResponse.Success(_context.SaveChanges());
         }
+
+        public BaseResponse Add(Order order)
+        {
+            _context.Orders.Add(order);
+
+            if (_context.SaveChanges() > 0) return BaseResponse.Success();
+
+            return BaseResponse.Error();
+        }
     }
 }

@@ -19,6 +19,7 @@ builder.Services.AddScoped<IProductService, ProductServiceImpl>();
 builder.Services.AddScoped<IProductTypeService, ProductTypeServiceImpl>();
 builder.Services.AddScoped<IOrderService, OrderServiceImpl>();
 builder.Services.AddScoped<IOrderDetailService, OrderDetailServiceImpl>();
+builder.Services.AddScoped<IUserService, UserServiceImpl>();
 
 builder.Services.AddDbContext<Electronic_Shop_SystemContext>();
 

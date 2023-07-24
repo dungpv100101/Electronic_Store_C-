@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using Eletronic.Client;
 using Eletronic.Models;
 
 namespace Eletronic.GUI
@@ -14,6 +15,7 @@ namespace Eletronic.GUI
     public partial class UserMangeGUI : Form
     {
         private Electronic_Shop_SystemContext context = new Electronic_Shop_SystemContext();
+        private UserClient userClient = new UserClient();
         public UserMangeGUI()
         {
             InitializeComponent();
@@ -23,7 +25,8 @@ namespace Eletronic.GUI
         public void bindUserList(string userName)
         {
             panelUserList.Controls.Clear();
-            List<User> listUser = context.Users.Where(s => s.IsManager != 1 && s.Name.Contains(userName)).ToList();
+            //List<User> listUser = context.Users.Where(s => s.IsManager != 1 && s.Name.Contains(userName)).ToList();
+            List<User> listUser = userClient.GetListUser(userName);
 
             int posX = 3;
             int posY = 3;
@@ -153,17 +156,19 @@ namespace Eletronic.GUI
             {
                 if (MessageBox.Show("Do you really want to set to user", "Warning", MessageBoxButtons.YesNo) == DialogResult.Yes)
                 {
-                    context.Users.Find(userID).IsStaff = 0;
+                    //context.Users.Find(userID).IsStaff = 0;
+                    userClient.SetStaff(userID, 0);
                 }
             } else
             {
                 if (MessageBox.Show("Do you really want to set to staff", "Warning", MessageBoxButtons.YesNo) == DialogResult.Yes)
                 {
-                    context.Users.Find(userID).IsStaff = 1;
+                    //context.Users.Find(userID).IsStaff = 1;
+                    userClient.SetStaff(userID, 1);
                 }
             }
             
-            context.SaveChanges();
+            //context.SaveChanges();
             bindUserList("");
         }
 
