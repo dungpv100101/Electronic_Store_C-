@@ -1,11 +1,22 @@
+using AutoMapper;
+using ElectronicAPI.Services;
+using ElectronicAPI.Services.Impl;
+using Eletronic.Models;
+
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
+
 
 builder.Services.AddControllers();
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
+
+builder.Services.AddAutoMapper(AppDomain.CurrentDomain.GetAssemblies());
+
+builder.Services.AddScoped<IProductService, ProductServiceImpl>();
+builder.Services.AddDbContext<Electronic_Shop_SystemContext>();
 
 var app = builder.Build();
 

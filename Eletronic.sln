@@ -7,6 +7,10 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Eletronic", "Eletronic\Elet
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DataAccess", "DataAccess\DataAccess.csproj", "{10BC3D9F-46F2-487A-8D14-D38FA5E64AD7}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ElectronicAPI", "ElectronicAPI\ElectronicAPI.csproj", "{4F24C885-338B-4B7A-94ED-559A65EEADEF}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BusinessObject", "BusinessObject\BusinessObject.csproj", "{2DB91D70-3D4E-46FD-87CE-CB2AAC5A37B8}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -21,6 +25,14 @@ Global
 		{10BC3D9F-46F2-487A-8D14-D38FA5E64AD7}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{10BC3D9F-46F2-487A-8D14-D38FA5E64AD7}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{10BC3D9F-46F2-487A-8D14-D38FA5E64AD7}.Release|Any CPU.Build.0 = Release|Any CPU
+		{4F24C885-338B-4B7A-94ED-559A65EEADEF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4F24C885-338B-4B7A-94ED-559A65EEADEF}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4F24C885-338B-4B7A-94ED-559A65EEADEF}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4F24C885-338B-4B7A-94ED-559A65EEADEF}.Release|Any CPU.Build.0 = Release|Any CPU
+		{2DB91D70-3D4E-46FD-87CE-CB2AAC5A37B8}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2DB91D70-3D4E-46FD-87CE-CB2AAC5A37B8}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2DB91D70-3D4E-46FD-87CE-CB2AAC5A37B8}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2DB91D70-3D4E-46FD-87CE-CB2AAC5A37B8}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
