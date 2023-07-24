@@ -17,6 +17,8 @@ builder.Services.AddAutoMapper(AppDomain.CurrentDomain.GetAssemblies());
 
 builder.Services.AddScoped<IProductService, ProductServiceImpl>();
 builder.Services.AddScoped<IProductTypeService, ProductTypeServiceImpl>();
+builder.Services.AddScoped<IOrderService, OrderServiceImpl>();
+builder.Services.AddScoped<IOrderDetailService, OrderDetailServiceImpl>();
 
 builder.Services.AddDbContext<Electronic_Shop_SystemContext>();
 

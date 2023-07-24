@@ -3,6 +3,7 @@ using System.Drawing;
 using System.IO;
 using System.Linq;
 using System.Windows.Forms;
+using Eletronic.Client;
 using Eletronic.Models;
 
 namespace Eletronic.GUI
@@ -10,6 +11,8 @@ namespace Eletronic.GUI
     public partial class AddProductGUI : Form
     {
         private Electronic_Shop_SystemContext context = new Electronic_Shop_SystemContext();
+        private ProductClient productClient = new ProductClient();
+        private ProductTypeClient productTypeClient = new ProductTypeClient();
         public AddProductGUI()
         {
             InitializeComponent();
@@ -17,7 +20,7 @@ namespace Eletronic.GUI
 
         private void AddProduct_Load(object sender, EventArgs e)
         {
-            comboCategory.DataSource = context.ProductTypes.ToList();
+            comboCategory.DataSource = productTypeClient.GetListProductType();
             comboCategory.DisplayMember = "ProductTypeName";
             comboCategory.ValueMember = "ProductTypeID";
         }
@@ -40,8 +43,7 @@ namespace Eletronic.GUI
                     Image = image
                 };
 
-                context.Products.Add(product);
-                context.SaveChanges();
+                productClient.AddProduct(product);
             }
             catch
             {

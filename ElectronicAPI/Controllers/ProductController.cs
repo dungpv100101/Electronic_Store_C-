@@ -1,4 +1,5 @@
 ﻿using ElectronicAPI.Services;
+using Eletronic.Models;
 using Microsoft.AspNetCore.Mvc;
 
 namespace ElectronicAPI.Controllers
@@ -17,6 +18,12 @@ namespace ElectronicAPI.Controllers
         public IActionResult List(int pageNumber = 1, int pageSize = 3, string? productName = "", int categoryID = 0)
         {
             return Ok(productService.List(pageNumber, pageSize, productName, categoryID));
+        }
+
+        [HttpPost]
+        public IActionResult Add(Product product)
+        {
+            return Ok(productService.Add(product));
         }
     }
 }

@@ -20,5 +20,12 @@ namespace ElectronicAPI.Services.Impl
 
             return BaseResponse.Success(listProduct);
         }
+        
+        public BaseResponse Add(Product product)
+        {
+            _context.Products.Add(product);
+            
+            return BaseResponse.Success(_context.SaveChanges());
+        }
     }
 }

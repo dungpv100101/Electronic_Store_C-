@@ -8,6 +8,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using Eletronic.Client;
 using Eletronic.Models;
 using Microsoft.EntityFrameworkCore;
 
@@ -16,6 +17,8 @@ namespace Eletronic.GUI
     public partial class OrderGUI : Form
     {
         private Electronic_Shop_SystemContext context = new Electronic_Shop_SystemContext();
+        private OrderClient orderClient = new OrderClient();
+        private OrderDetailClient orderDetailClient = new OrderDetailClient();
         private bool isManage;
         public OrderGUI()
         {
@@ -38,10 +41,10 @@ namespace Eletronic.GUI
 
             if (isManage)
             {
-                listOrder = context.Orders.Where(s => s.Name.Contains(userName)).ToList();
+                listOrder = orderClient.GetListOrder(null, userName);
             } else
             {
-                listOrder = context.Orders.Where(s => s.StaffId == Setting.user.StaffId && s.Name.Contains(userName)).ToList();
+                listOrder = orderClient.GetListOrder(Setting.user.StaffId, userName);
             }
 
             int posX = 3;
@@ -72,7 +75,7 @@ namespace Eletronic.GUI
         public void bindOrderDetailsItem(int orderID)
         {
             panelOrderDetails.Controls.Clear();
-            List<OrderDetail> listOrderDetails = context.OrderDetails.Include(s => s.Product).Where(s => s.OrderId == orderID).ToList();
+            List<OrderDetail> listOrderDetails = orderDetailClient.GetListOrderDetail(orderID);
 
             int posX = 4;
             int posY = 4;
@@ -265,8 +268,8 @@ namespace Eletronic.GUI
             {
                 Button button = (Button)sender;
 
-                ((Order)context.Orders.Find(Int32.Parse(button.Name))).DeliverDate = DateTime.Now;
-                context.SaveChanges();
+                orderClient.Delivered(Int32.Parse(button.Name));
+
                 bindOrderListItem(isManage);
             }
         }

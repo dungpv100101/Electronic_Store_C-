@@ -17,7 +17,7 @@ namespace Eletronic.Client
         {
             string apiUrl = PRODUCT_TYPE_URL + "List";
 
-            BaseResponse baseResponse = CallApi(apiUrl, null);
+            BaseResponse baseResponse = Get(apiUrl);
 
             List<ProductType> productTypes = baseResponse.GetData<List<ProductType>>();
 
