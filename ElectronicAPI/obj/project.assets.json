@@ -2892,11 +2892,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "D:\\Learn\\Summer2023\\PRN213\\Electronic_Store_CSharp\\ElectronicAPI\\ElectronicAPI.csproj",
+      "projectUniqueName": "D:\\DH_FPT\\Summer2023\\PRN231\\Electronic_Store_CSharp\\ElectronicAPI\\ElectronicAPI.csproj",
       "projectName": "ElectronicAPI",
-      "projectPath": "D:\\Learn\\Summer2023\\PRN213\\Electronic_Store_CSharp\\ElectronicAPI\\ElectronicAPI.csproj",
+      "projectPath": "D:\\DH_FPT\\Summer2023\\PRN231\\Electronic_Store_CSharp\\ElectronicAPI\\ElectronicAPI.csproj",
       "packagesPath": "C:\\Users\\Admin\\.nuget\\packages\\",
-      "outputPath": "D:\\Learn\\Summer2023\\PRN213\\Electronic_Store_CSharp\\ElectronicAPI\\obj\\",
+      "outputPath": "D:\\DH_FPT\\Summer2023\\PRN231\\Electronic_Store_CSharp\\ElectronicAPI\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\Admin\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -2913,11 +2913,11 @@
         "net6.0": {
           "targetAlias": "net6.0",
           "projectReferences": {
-            "D:\\Learn\\Summer2023\\PRN213\\Electronic_Store_CSharp\\BusinessObject\\BusinessObject.csproj": {
-              "projectPath": "D:\\Learn\\Summer2023\\PRN213\\Electronic_Store_CSharp\\BusinessObject\\BusinessObject.csproj"
+            "D:\\DH_FPT\\Summer2023\\PRN231\\Electronic_Store_CSharp\\BusinessObject\\BusinessObject.csproj": {
+              "projectPath": "D:\\DH_FPT\\Summer2023\\PRN231\\Electronic_Store_CSharp\\BusinessObject\\BusinessObject.csproj"
             },
-            "D:\\Learn\\Summer2023\\PRN213\\Electronic_Store_CSharp\\DataAccess\\DataAccess.csproj": {
-              "projectPath": "D:\\Learn\\Summer2023\\PRN213\\Electronic_Store_CSharp\\DataAccess\\DataAccess.csproj"
+            "D:\\DH_FPT\\Summer2023\\PRN231\\Electronic_Store_CSharp\\DataAccess\\DataAccess.csproj": {
+              "projectPath": "D:\\DH_FPT\\Summer2023\\PRN231\\Electronic_Store_CSharp\\DataAccess\\DataAccess.csproj"
             }
           }
         }
@@ -2956,7 +2956,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.201\\RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.103\\RuntimeIdentifierGraph.json"
       }
     }
   }

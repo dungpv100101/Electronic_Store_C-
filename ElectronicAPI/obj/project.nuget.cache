@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "sUBktc5dpH0MY+UYmAnL6vXKBrKaXLPqB3Tfd1Ujskbu0Q2jvtc2/j5g9zj5r/Zb93TD1yHAEldYgu1cLfmyRQ==",
+  "dgSpecHash": "GR8Q8b8nf3xC0gIilWTXsKmYTfAzjT8V4D6IYEt1KVahyQggs+VfiOgtk68cqHSUH/QufXJuwlEHWFhDqnAyzA==",
   "success": true,
-  "projectFilePath": "D:\\Learn\\Summer2023\\PRN213\\Electronic_Store_CSharp\\ElectronicAPI\\ElectronicAPI.csproj",
+  "projectFilePath": "D:\\DH_FPT\\Summer2023\\PRN231\\Electronic_Store_CSharp\\ElectronicAPI\\ElectronicAPI.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\Admin\\.nuget\\packages\\automapper\\8.0.0\\automapper.8.0.0.nupkg.sha512",
     "C:\\Users\\Admin\\.nuget\\packages\\automapper.extensions.microsoft.dependencyinjection\\6.0.0\\automapper.extensions.microsoft.dependencyinjection.6.0.0.nupkg.sha512",

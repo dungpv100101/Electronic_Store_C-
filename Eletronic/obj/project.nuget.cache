@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "xVi97s0M+gKL0Muy0ggGIdR25naaJZiC+ZNlP7Ny3Or4/BDzURkthDqcq/SQX2cK3b/uYmnQzzALkS7uA78VuA==",
+  "dgSpecHash": "9i/Mvm33oom5/e+xsrFHT8RRn5Nsfpt570Z6dZoyaMXRT9qIodSUT8pNXCOc8AMu0lowmewor9co49lmBIe9Mw==",
   "success": true,
-  "projectFilePath": "D:\\Learn\\Summer2023\\PRN213\\Electronic_Store_CSharp\\Eletronic\\Eletronic.csproj",
+  "projectFilePath": "D:\\DH_FPT\\Summer2023\\PRN231\\Electronic_Store_CSharp\\Eletronic\\Eletronic.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\Admin\\.nuget\\packages\\humanizer.core\\2.8.26\\humanizer.core.2.8.26.nupkg.sha512",
     "C:\\Users\\Admin\\.nuget\\packages\\microsoft.csharp\\4.7.0\\microsoft.csharp.4.7.0.nupkg.sha512",

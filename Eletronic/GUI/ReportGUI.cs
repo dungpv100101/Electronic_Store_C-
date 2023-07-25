@@ -35,7 +35,10 @@ namespace DataAccess.GUI
 
             if (pro.Image != null)
             {
-                pictureBox4.Image = Image.FromStream(new MemoryStream(pro.Image));
+                try
+                {
+                    pictureBox4.Image = Image.FromStream(new MemoryStream(pro.Image));
+                } catch(Exception ex) { }
             }
 
             textBox1.Text = pro.Name;

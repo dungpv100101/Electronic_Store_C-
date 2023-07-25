@@ -6009,11 +6009,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "D:\\Learn\\Summer2023\\PRN213\\Electronic_Store_CSharp\\Eletronic\\Eletronic.csproj",
+      "projectUniqueName": "D:\\DH_FPT\\Summer2023\\PRN231\\Electronic_Store_CSharp\\Eletronic\\Eletronic.csproj",
       "projectName": "Eletronic",
-      "projectPath": "D:\\Learn\\Summer2023\\PRN213\\Electronic_Store_CSharp\\Eletronic\\Eletronic.csproj",
+      "projectPath": "D:\\DH_FPT\\Summer2023\\PRN231\\Electronic_Store_CSharp\\Eletronic\\Eletronic.csproj",
       "packagesPath": "C:\\Users\\Admin\\.nuget\\packages\\",
-      "outputPath": "D:\\Learn\\Summer2023\\PRN213\\Electronic_Store_CSharp\\Eletronic\\obj\\",
+      "outputPath": "D:\\DH_FPT\\Summer2023\\PRN231\\Electronic_Store_CSharp\\Eletronic\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\Admin\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -6090,7 +6090,7 @@
             "privateAssets": "none"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.201\\RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.103\\RuntimeIdentifierGraph.json"
       }
     }
   }

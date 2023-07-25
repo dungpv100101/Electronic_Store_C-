@@ -12,3 +12,17 @@ D:\Learn\Summer2023\PRN213\Electronic_Store_CSharp\DataAccess\obj\Debug\net6.0\r
 D:\Learn\Summer2023\PRN213\Electronic_Store_CSharp\DataAccess\obj\Debug\net6.0\DataAccess.pdb
 D:\Learn\Summer2023\PRN213\Electronic_Store_CSharp\DataAccess\obj\Debug\net6.0\DataAccess.genruntimeconfig.cache
 D:\Learn\Summer2023\PRN213\Electronic_Store_CSharp\DataAccess\obj\Debug\net6.0\ref\DataAccess.dll
+D:\DH_FPT\Summer2023\PRN231\Electronic_Store_CSharp\DataAccess\bin\Debug\net6.0\DataAccess.deps.json
+D:\DH_FPT\Summer2023\PRN231\Electronic_Store_CSharp\DataAccess\bin\Debug\net6.0\DataAccess.runtimeconfig.json
+D:\DH_FPT\Summer2023\PRN231\Electronic_Store_CSharp\DataAccess\bin\Debug\net6.0\DataAccess.dll
+D:\DH_FPT\Summer2023\PRN231\Electronic_Store_CSharp\DataAccess\bin\Debug\net6.0\DataAccess.pdb
+D:\DH_FPT\Summer2023\PRN231\Electronic_Store_CSharp\DataAccess\obj\Debug\net6.0\DataAccess.csproj.AssemblyReference.cache
+D:\DH_FPT\Summer2023\PRN231\Electronic_Store_CSharp\DataAccess\obj\Debug\net6.0\DataAccess.GeneratedMSBuildEditorConfig.editorconfig
+D:\DH_FPT\Summer2023\PRN231\Electronic_Store_CSharp\DataAccess\obj\Debug\net6.0\DataAccess.AssemblyInfoInputs.cache
+D:\DH_FPT\Summer2023\PRN231\Electronic_Store_CSharp\DataAccess\obj\Debug\net6.0\DataAccess.AssemblyInfo.cs
+D:\DH_FPT\Summer2023\PRN231\Electronic_Store_CSharp\DataAccess\obj\Debug\net6.0\DataAccess.csproj.CoreCompileInputs.cache
+D:\DH_FPT\Summer2023\PRN231\Electronic_Store_CSharp\DataAccess\obj\Debug\net6.0\DataAccess.dll
+D:\DH_FPT\Summer2023\PRN231\Electronic_Store_CSharp\DataAccess\obj\Debug\net6.0\refint\DataAccess.dll
+D:\DH_FPT\Summer2023\PRN231\Electronic_Store_CSharp\DataAccess\obj\Debug\net6.0\DataAccess.pdb
+D:\DH_FPT\Summer2023\PRN231\Electronic_Store_CSharp\DataAccess\obj\Debug\net6.0\DataAccess.genruntimeconfig.cache
+D:\DH_FPT\Summer2023\PRN231\Electronic_Store_CSharp\DataAccess\obj\Debug\net6.0\ref\DataAccess.dll
