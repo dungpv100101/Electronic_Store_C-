@@ -179,9 +179,9 @@ namespace DataAccess.GUI
             btnUploadImage.Name = order.OrderId + "";
             btnUploadImage.Size = new System.Drawing.Size(165, 24);
             btnUploadImage.TabIndex = 27;
-            btnUploadImage.Text = Setting.user.IsManager == 1 ? (order.DeliverDate == null ? "Deliver Now" : order.DeliverDate.ToString()) : (order.DeliverDate == null ? "Not Deliver" : order.DeliverDate.ToString());
+            btnUploadImage.Text = (Setting.user.IsManager == 1 || Setting.user.IsStaff == 1) ? (order.DeliverDate == null ? "Deliver Now" : order.DeliverDate.ToString()) : (order.DeliverDate == null ? "Not Deliver" : order.DeliverDate.ToString());
             btnUploadImage.UseVisualStyleBackColor = false;
-            btnUploadImage.Enabled = order.DeliverDate == null && Setting.user.IsManager == 1;
+            btnUploadImage.Enabled = order.DeliverDate == null && (Setting.user.IsManager == 1 || Setting.user.IsStaff == 1);
             btnUploadImage.Click += btnDelivered_Click;
 
             return panel1;
